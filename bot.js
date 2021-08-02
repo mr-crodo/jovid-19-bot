@@ -7,10 +7,10 @@ const COUNTRIES_LIST = require('./constants')
 // BOT_TOKEN =  This is the token that you will receive from BotFather in Telegram
 const bot = new Telegraf(process.env.BOT_TOKEN); 
 bot.start((ctx) => ctx.reply(`
-Salam ${ctx.message.from.first_name}!
-Koronavirus statistikanı oyrenin.
-Ölkənin adını ingilis dilində daxil edin və statistikanı əldə edin.
-Ölkələrin yazılışında çətinlik çəkirsinizsə onda /help komandasınnan istifadə edin.
+Hello ${ctx.message.from.first_name}!
+This bot will help you get statistics on the corona virus
+Write the name of the country and get statistics on covid - 19.
+If you do not know how to enter the name of the countries, then type the command /help .
 `, 
   Markup.keyboard([
   ['Azerbaijan', 'Turkey'],
@@ -27,22 +27,22 @@ bot.on('text', async (ctx) => {
   try {
       data = await api.getReportsByCountries(ctx.message.text);
       const formatData = `
-Ölkə : ${data[0][0].country}
-Ümumi yoluxanlar : ${data[0][0].cases}
-Ölənlərin sayı : ${data[0][0].deaths}
-Sağalanların sayı : ${data[0][0].recovered}
+Country  : ${data[0][0].country}
+Cases  : ${data[0][0].cases}
+Deaths  : ${data[0][0].deaths}
+Recovered  : ${data[0][0].recovered}
   `;
       // Flag : ${data[0][0].flag}
       ctx.reply(formatData)
   } catch {
-    console.log('Owibka oldu qadan alem');
-    ctx.reply('Qadan alem sef yazdın e eləbilki bidənə instruksiyanı yaxşı oxu sonra gəl, yada salamatı /help yaz');
+    console.log('You made a mistake');
+    ctx.reply('You entered the wrong country name, enter the command /help To get acquainted with the names of the countries');
   }
 
 });
 
 bot.launch()
-console.log('Бот запущен');
+console.log('Bot launched');
 
 
 // Enable graceful stop
