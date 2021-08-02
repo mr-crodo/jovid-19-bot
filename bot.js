@@ -4,7 +4,8 @@ const api = require('covid19-api');
 const Markup = require('telegraf/markup');
 const COUNTRIES_LIST = require('./constants')
 
-const bot = new Telegraf(process.env.BOT_TOKEN); // BOT_TOKEN - This is the token that you will receive from BotFather in Telegram
+// BOT_TOKEN =  This is the token that you will receive from BotFather in Telegram
+const bot = new Telegraf(process.env.BOT_TOKEN); 
 bot.start((ctx) => ctx.reply(`
 Salam ${ctx.message.from.first_name}!
 Koronavirus statistikanı oyrenin.
