@@ -8,7 +8,7 @@ npm install
 
 ### To launch the bot
 ```
-npm run serve
+npm run start
 ```
 
 ### BOT_TOKEN
