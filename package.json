@@ -1,0 +1,31 @@
+{
+  "name": "jovid-19-bot",
+  "version": "1.0.0",
+  "description": "This bot will send statistics on covid-19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-crodo/jovid-19-bot.git"
+  },
+  "author": "Nasib Mammadov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mr-crodo/jovid-19-bot/issues"
+  },
+  "homepage": "https://github.com/mr-crodo/jovid-19-bot#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "covid19-api": "^1.2.1",
+    "dotenv": "^10.0.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "telegraf": "^3.39.0"
+  }
+}
